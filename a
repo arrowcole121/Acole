@@ -1,0 +1,36 @@
+import random
+import os
+
+# Clears the console of text
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def main():
+    clear()
+    intros = ["Just get it over with: ", "Oh, you're consulting me? Must be desperate. Ask your question, I guess. ", "Want my opinion? Fine, whatever. Ask your yes or no question, if you can handle the truth. ", "As if your choices matter, but go ahead, ask away: ", "Sure, I'll pretend your question matters. What is it? ", "What's so important for you to come bothering me this time? ", "Here we go again.. ", "I suppose I have nothing better to do, ask your super important question ", "Feeling lucky? Don't get your hopes up. ", "Give me an actually good question this time? ", ]
+    print("PASSIVE AGGRESSIVE 8-BALL\n")
+    question = input(random.choice(intros))
+    answer(question)
+
+def answer(q):
+    clear()
+    print("PASSIVE AGGRESSIVE 8-BALL\n")
+    # Positive, then neutral, then negative
+    possible_answers = ["Sure, if that's what you want to believe.", "Yes, because clearly, you have it all figured out.", "Sure thing, genius. Your question was truly groundbreaking.", "Sure I guess.", "Yes, but don't act surprised; even a broken clock is right twice a day.", "Sure, because that's exactly what the universe revolves around – your desires.", "Sure, because my psychic abilities were totally itching to predict your mundane positive outcome.", "Yes, shockingly enough, the universe decided to align in your favor this time.", "Congratulations, it's a 'yes'! I hope this momentous occasion doesn't go to your head.", "Yes, but you might want to reconsider your life choices if you needed confirmation from a talking pool ball.", "Yes! Congrats! I bet you haven't heard that in a while.", "I couldn't care less. Come back later (or never)", "I have better things to do than to answer that.", "I wasn't paying attention. Try again (or dont).", "Question stupid. Try again.", "Meh, I don't feel like answering right now.", "You should know the answer to that, you're better than this.", "No me importa.", "Don't waste my time, come up with something actually important next time ok?", "If you don't know I'm not telling you.", "To whom it may concern: this question is lame", "I dunno.", "I know I am, but what are you?", "Nah.", "Oh, the disappointment! It's a no! Whatever will you do?", "No, but I'm sure you'll find a way to blame something for your failure.", "Outlook not so good, just like your question.", "Don't count on it, unless you enjoy disappointment.", "Bet on it and lose for all I care", "In your dreams.", "No, but don't worry, I'm sure you're used to hearing that.", "Picture this: A universe where your question gets a 'yes.' Now, snap back to reality. No.", "If getting rejected was a currency you'd be rich.", "Keep dreaming kid.", "Did you hear that? That's right! Not happening.", "I am pleased to announce that upon consulting the fates, it has been decided that HECK NO!", "You're funny. Oh, that wasn't a joke? No. Not happening."]
+    answer = random.choice(possible_answers)
+    print(answer)
+    while True:
+        restart = input("\nBother me again? (y/n) ").lower()
+        
+        if restart == "y":
+            main()
+        elif restart == "n":
+            clear()
+            print("Good riddance...")
+            quit()
+        else:
+            print("\nHey, buddy, all you have to do is type 'y' or 'n'. Try again")
+        
+
+
+main()
